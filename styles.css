@@ -1,0 +1,362 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    background: linear-gradient(
+    to bottom,
+    #3a3a3a,
+    #1a1a1a,
+    #000000
+    );
+}
+
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
+
+    transition: all 0.3s ease; /* 👈 IMPORTANTE */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centra horizontal */
+    justify-content: center; /* centra vertical */
+    text-align: center;    /* centra texto */
+}
+
+/* estado reducido */
+.header.small {
+    padding: 6px 0;
+    background: rgba(10, 10, 10, 0.9);
+}
+
+/* mensaje que desaparece */
+.header.small .mensaje-scroll {
+    opacity: 0;
+}
+/* Mensajes */
+.mensaje-scroll {
+    color: #ccc;
+    font-size: 22px;
+    transition: opacity 0.3s ease;
+}
+
+.mensaje-fijo {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Para que el contenido no quede tapado */
+.contenido {
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 100px;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(97, 93, 93, 0.7);
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+}
+
+/* IZQUIERDA pegado a la izquierda */
+.izquierda {
+    flex: 1;
+    text-align: left;
+}
+
+/* DERECHA pegado a la derecha */
+.derecha {
+    flex: 1;
+    text-align: right;
+}
+
+.panel {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 100px; /* 👈 esto soluciona el problema */
+}
+
+.semana {
+    background: #f1f5f9;  /* gris suave */
+    padding: 25px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+/* DÍAS */
+.dias {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dia {
+    padding: 14px 20px;   /* más espacio interno */
+    min-width: 70px;      /* ancho mínimo */
+    font-size: 15px;      /* texto más grande */
+    font-weight: 500;
+
+    background: #e2e8f0;
+    border: none;
+    color: #111;
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+/* hover glow */
+.dia:hover {
+    background: #867e7e;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* activo */
+.dia.activo {
+    background: linear-gradient(135deg, #6366f1, #b45454);
+    color: white;
+    box-shadow: 0 0 12px rgba(255,255,255,0.15);
+}
+
+/* CONTENEDOR */
+.tareas-container {
+    background: linear-gradient(135deg, #353434, #797676);
+    border-radius: 14px;
+    padding: 20px;
+    min-height: 140px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+}
+
+.tareas-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TAREA */
+.tarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+/* hover tarea */
+.tarea:hover {
+    background: rgba(189, 185, 185, 0.05);
+}
+
+/* header tarea */
+.tarea-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* TITULO BONITO (fix contraste) */
+.tarea h4 {
+    margin: 0;
+    color: #7dd3fc; /* azul suave bonito */
+    font-weight: 600;
+}
+
+/* DESCRIPCIÓN */
+.tarea p {
+    margin: 5px 0 0 26px;
+    color: #d6d1d1;
+}
+
+/* CHECKBOX */
+.tarea input {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* COMPLETADA */
+.tarea.completada h4 {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.tarea.completada p {
+    text-decoration: line-through;
+    color: #555;
+}
+
+/* PLACEHOLDER */
+.placeholder {
+    color: #777;
+}
+
+.proyectos {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+/* lista */
+.lista-proyectos {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.proyecto-btn {
+    background: #e0e0e0;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.proyecto-btn:hover {
+    background: #d0d0d0;
+}
+
+/* activo */
+.proyecto-btn.activo {
+    background: #333;
+    color: white;
+}
+
+/* detalle */
+.detalle-proyecto {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 120px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+}
+
+.detalle-proyecto.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* título */
+.detalle-proyecto h3 {
+    margin: 0;
+    color: #111;
+}
+
+/* descripción */
+.detalle-proyecto p {
+    color: #444;
+}
+
+/* barra progreso */
+.barra {
+    margin-top: 15px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80, #22c55e);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+#porcentajeTexto {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #111;
+}
+
+.extra {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background: #e7e9eb;   /* gris muy claro elegante */
+    color: #111;
+    padding: 20px;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.centro {
+    text-align: center;
+}
+
+.centro img {
+    width: 100%;
+    max-height: 350px;   /* 👈 clave */
+    object-fit: cover;   /* recorta sin deformar */
+    border-radius: 10px;
+}
+
+.box input,
+.box textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #111;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+
+#btnGuardar {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: #22c55e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#btnGuardar:hover {
+    background: #16a34a;
+}
+
+.main {
+    margin-top: 100px; /* espacio debajo del header */
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* 👈 ESTE es el espacio entre secciones */
+    padding: 20px;
+}

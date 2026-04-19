@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// 🔴 PEGA AQUÍ TU CONFIG (la que copiaste)
+const firebaseConfig = {
+    apiKey: "AIzaSyDmIJJjxwgzbuGhwIEk696dqacCdnQT2Xo",
+    authDomain: "mi-dash.firebaseapp.com",
+    projectId: "mi-dash",
+    storageBucket: "mi-dash.firebasestorage.app",
+    messagingSenderId: "153139305940",
+    appId: "1:153139305940:web:87f61d7b0ec24d20828a41"
+  };
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// 🔹 BOTÓN GUARDAR
+document.getElementById("btnGuardar").addEventListener("click", async () => {
+
+    const titulo = document.getElementById("inputTitulo").value;
+    const comentario = document.getElementById("inputComentario").value;
+
+    if (!titulo || !comentario) return;
+
+    try {
+        await addDoc(collection(db, "mensajes"), {
+            titulo,
+            comentario,
+            fecha: new Date()
+        });
+
+        alert("Enviado, gracias por tu comentario baby ✅");
+
+    } catch (error) {
+        console.error(error);
+        alert("Algo falló, avísame al Whats mejor XD ❌");
+    }
+});
+</script>
+
+
+
+<body>
+
+<header class="header">
+    <div class="header-content">
+        <p class="mensaje-scroll">La fe demuestra la realidad de lo que esperamos; es la evidencia de la cosas que no podemos ver</p>
+        <p class="mensaje-fijo" id="mensajeFijo"></p>
+    </div>
+</header>
+<main class="main">
+<section class="panel">
+    <!-- IZQUIERDA -->
+    <div class="card izquierda">
+        <h2 id="tituloDisplay"></h2>
+        <p id="mensajeDisplay"></p>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="card derecha">
+        <p id="ocupacionDisplay"></p>
+        <p id="feelingDisplay"></p>
+    </div>
+</section>
+
+<section class="semana">
+    <div class="dias">
+        <button class="dia" data-dia="Domingo">Dom</button>
+        <button class="dia" data-dia="Lunes">Lun</button>
+        <button class="dia" data-dia="Martes">Mar</button>
+        <button class="dia" data-dia="Miércoles">Mié</button>
+        <button class="dia" data-dia="Jueves">Jue</button>
+        <button class="dia" data-dia="Viernes">Vie</button>
+        <button class="dia" data-dia="Sábado">Sáb</button>
+    </div>
+
+    <div class="tareas-container" id="tareasContainer">
+        <p class="placeholder">Selecciona un día</p>
+    </div>
+</section>
+
+<section class="proyectos">
+    <div class="lista-proyectos" id="listaProyectos"></div>
+
+    <div class="detalle-proyecto" id="detalleProyecto">
+        <p class="placeholder">Selecciona un proyecto</p>
+    </div>
+</section>
+
+<section class="extra">
+
+    <!-- IZQUIERDA -->
+    <div class="box">
+        <h3>Qué tengo en mi mente ahora?</h3>
+        <p>Nunca he tenido más ganas en la vida de salir adelante, veo mi presente y se que esto no me pretenece.</p>
+        <p id="mensajeRandom"></p>
+    </div>
+
+    <!-- CENTRO -->
+    <div class="box centro">
+        <h3>Que cool </h3>
+        <p>Que cool se siente la vida junto a ti</p>
+        <img src="f1.jpeg" alt="Imagen">
+    </div>
+
+    <!-- DERECHA -->
+    <div class="box">
+        <h3>Déjame un mensaje</h3>
+
+        <input type="text" id="inputTitulo" placeholder="Título">
+        <textarea id="inputComentario" placeholder="Escribe tu mensaje..."></textarea>
+
+        <button id="btnGuardar">Publicar</button>
+        <p id="estadoEnvio"></p>
+    </div>
+
+    
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
