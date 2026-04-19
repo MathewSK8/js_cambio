@@ -236,7 +236,7 @@ window.addEventListener("scroll", () => {
 // 🔹 TUS DATOS (los cambias cuando quieras)
 const datos = {
     titulo: "Ora por mi 🙏",
-    mensaje: "Tener calridad para mis metas",
+    mensaje: "Tener paz en mi alrededor y ser concreto en mis decisiones",
     ocupacion: "A tareado",
     feeling: "Okay"
 };
