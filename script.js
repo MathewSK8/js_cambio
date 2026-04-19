@@ -300,7 +300,7 @@ const tareas = {
     "Viernes": [
         { titulo: "NO INFO YET", descripcion: "Para pensar: Un momento amargo de 10 minutos puede contaminar los 1330 minutos que te restan de día? Ahora, ¿puede eso sobrepasar el entendimiento de saber que eres salvo hoy?" }
     ],
-    "Sábado": [{ titulo: "NO INFO YET", descripcion: "Para pensar: ¿Qué puedo hacer hoy que necesite mañana?}],
+    "Sábado": [{ titulo: "NO INFO YET", descripcion: "Para pensar: ¿Qué puedo hacer hoy que necesite mañana?"}],
     "Domingo": [
         { titulo: "Conexión Profunda con Dios", descripcion: "Orar un buen rato a solas y sin distracciones" },
         { titulo: "Repaso profundo de SQL", descripcion: "Repasar y guardar de manera concreta y profunda resoluciones y consultas que toman en cuenta en entrevistas: CTEs, Windows Functions, Subquerys, Sotred Procedures"},
