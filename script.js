@@ -237,8 +237,8 @@ window.addEventListener("scroll", () => {
 const datos = {
     titulo: "Ora por mi 🙏",
     mensaje: "Tener calridad para mis metas",
-    ocupacion: "Medio Libre",
-    feeling: "Indiferente"
+    ocupacion: "A tareado",
+    feeling: "Okay"
 };
 
 // 🔹 COLORES OCUPACIÓN
@@ -279,22 +279,32 @@ document.getElementById("feelingDisplay").textContent =
 // 🔹 TAREAS INTERNAS
 const tareas = {
     "Lunes": [
-        { titulo: "Estudiar Python", descripcion: "Repasar clases y practicar" },
-        { titulo: "Ejercicio", descripcion: "30 min cardio" }
+        { titulo: "Business Intelgence", descripcion: "Estudio y dominio fuerete de KPI's para mostrar en entrevista debido a que los trabajos son enfocados a negociosr retail. Revenue growth, Churn rates,Conversion metrics,Customer lifetime value,Operationa efficiency." },
+        { titulo: "Proeficiencia en SQL", descripcion: "Estudio profundo del programa SQL para mostrar requerimiento de entrevistas 'dominio de herramienta/SQL Avanzado' en entrevistas y practicar SQL avanzado" }
     ],
     "Martes": [
-        { titulo: "Proyecto Web", descripcion: "Avanzar dashboard" }
+        { titulo: "Macros Excel", descripcion: "Practica de EXCEL avanzado: Pivot Query, Pivot Tables, Dynamic Dashboards " },
+        {titulo: "Repaso SQL", descripcion: "Repaso de domingo y lunes"},
+        {titulo: "Busqueda de Datasets", descripcion: "Planificación profunda y planteamiento de Proyectos a mostrar en perfiles de trabajo y GITHUB"},
+        {titulo: "Curso Corto GITHUB", descripcion: "Familiriazación de plataforma"}
     ],
-    "Miércoles": [],
+    "Miércoles": [{ titulo: "CRUSO POWER BI", descripcion: "Curso gratis MS Power BI" },
+        {titulo: "Repaso SQL", descripcion: "Repaso de domingo y lunes"},
+        {titulo: "Busqueda de Datasets", descripcion: "Planificación profunda y planteamiento de Proyectos a mostrar en perfiles de trabajo y GITHUB"},
+        {titulo: "Repaso profundo Python", descripcion: "Repaso profundo de librerias, Examenes Estadísticos y planteamiento de proyecto en PY"}],
     "Jueves": [
-        { titulo: "Revisión", descripcion: "Analizar progreso semanal" }
+        { titulo: "Revisión", descripcion: "Analizar progreso semanal" },
+        { titulo: "CRUSO POWER BI", descripcion: "Curso gratis MS Power BI: Enfocar en: Revenue growth, Churn rates, Conversion metrics, Customer lifetime value, Operationa efficiency." },
+        { titulo: "Establecer Proyectos", descripcion: "Tener lista dirección, info, y desarrollo de proyectos para portafolio a mostrar basado en unión de herramientas principales 'proyecto 1: Excel Avanzado con MACROS,SQL herramienta de Visulización Tableu. proyecto 2: SQL,Python, herramienta de visualización Power BI " }
     ],
     "Viernes": [
-        { titulo: "Practicar SQL", descripcion: "Queries avanzadas" }
+        { titulo: "NO INFO YET", descripcion: "Para pensar: Un momento amargo de 10 minutos puede contaminar los 1330 minutos que te restan de día? Ahora, ¿puede eso sobrepasar el entendimiento de saber que eres salvo hoy?" }
     ],
-    "Sábado": [],
+    "Sábado": [{ titulo: "NO INFO YET", descripcion: "Para pensar: ¿Qué puedo hacer hoy que necesite mañana?}],
     "Domingo": [
-        { titulo: "Descanso", descripcion: "Relajarse 😌" }
+        { titulo: "Conexión Profunda con Dios", descripcion: "Orar un buen rato a solas y sin distracciones" },
+        { titulo: "Repaso profundo de SQL", descripcion: "Repasar y guardar de manera concreta y profunda resoluciones y consultas que toman en cuenta en entrevistas: CTEs, Windows Functions, Subquerys, Sotred Procedures"},
+        {titulo: "Estudio Estadistico", descripcion: " Repaso profundo de estadistica y como emplearlos y ejecutarlos en proyectos reales para demostrar 'Perfil Analítico' que requieren trabajos"}
     ]
 };
 
@@ -395,19 +405,29 @@ window.addEventListener("scroll", () => {
 // 🔹 PROYECTOS INTERNOS
 const proyectos = [
     {
-        titulo: "Dashboard Personal",
-        descripcion: "Desarrollo de mi web para organización diaria",
-        progreso: 60
+        titulo: "Perfil Actualizado y vivo en LinkedIn",
+        descripcion: "Actualización de CV, Actualización de Proyectos mostrando conceptos avanzados de Analisis y BI intelligence, Creación de contenido para la plataforma para tener exposure",
+        progreso: 10
     },
     {
-        titulo: "Aprender Python",
-        descripcion: "Practicar estructuras y automatización",
-        progreso: 40
+        titulo: "Conceptos Avanzados de Estadística",
+        descripcion: "Apliación y método de testeo en datos y cuando utilizarlos",
+        progreso: 20
     },
     {
         titulo: "SQL Avanzado",
         descripcion: "Optimización de queries y análisis",
-        progreso: 25
+        progreso: 10
+    },
+    {
+        titulo: "Gran Proyecto de BI intelligence por medio de experiencia propia",
+        descripcion : "Comenzar un side hustle y documentarlo mostrando como se uso DA para poder obtener buenos resultados",
+        progreso: 0
+    },
+    {
+        titulo: "Proyectos Job Landing",
+        descripcion : "Serie de 3 proyectos que llaman a entrevistas demostrando ser un candidato apto para empleo: Poryecto 1: KPIS, Proyecto 2:The ROOT-CAUSE Analysis Project, Proyecto 3: Proyecto Recomendación Estilo Consultoria.",
+        progreso: 0
     }
 ];
 
